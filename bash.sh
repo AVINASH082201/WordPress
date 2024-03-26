@@ -17,7 +17,7 @@ sudo mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD -e "GRANT ALL PRIVILEGES ON $D
 sudo mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD -e "FLUSH PRIVILEGES;"
 
 sudo wget https://wordpress.org/latest.tar.gz
-sudo tar -zxvf latest.tar.gz
+sudo tar -zxvf latest.tar.gz -C /home/ec2-user/
 
 sudo mv /home/ec2-user/wordpress/wp-config-sample.php /home/ec2-user/wordpress/wp-config.php
 sudo sed -i "s/database_name_here/$DB_NAME/g" /home/ec2-user/wordpress/wp-config.php
