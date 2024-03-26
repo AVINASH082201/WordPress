@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: wordpress.cheelndqlyie.us-east-1.rds.amazonaws.com
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: avinash
+      WORDPRESS_DB_PASSWORD: database
+    volumes:
+      - wp-data:/var/www/html
