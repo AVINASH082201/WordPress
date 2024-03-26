@@ -13,3 +13,5 @@ services:
       WORDPRESS_DB_PASSWORD: database
     volumes:
       - wp-data:/var/www/html
+volumes:
+  wp-data:
