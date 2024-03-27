@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: wordpress
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: wordpress
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: wordpress
-        image: wordpress:latest
+        image: wordpress
         env:
         - name: WORDPRESS_DB_HOST
           value: wordpress.cheelndqlyie.us-east-1.rds.amazonaws.com
@@ -25,8 +25,13 @@ spec:
         - name: WORDPRESS_DB_PASSWORD
           value: database
         ports:
-        - containerPort: 80  
-          name: wordpress-port
+        - containerPort: 80
+        volumeMounts:
+        - name: wp-data
+          mountPath: /var/www/html
+      volumes:
+      - name: wp-data
+        emptyDir: {}  
 ---
 apiVersion: v1
 kind: Service
@@ -40,3 +45,4 @@ spec:
       port: 80
       targetPort: 80
   type: LoadBalancer
+
