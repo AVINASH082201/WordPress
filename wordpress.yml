@@ -24,6 +24,9 @@ spec:
           value: avinash
         - name: WORDPRESS_DB_PASSWORD
           value: database
+        ports:
+        - containerPort: 80  
+          name: wordpress-port
 ---
 apiVersion: v1
 kind: Service
