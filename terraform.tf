@@ -67,7 +67,7 @@ ingress {
 resource "aws_instance" "myinstance" {
   ami                    = "ami-0cf10cdf9fcd62d37"
   instance_type          = "t2.micro"
-  key_name               = "LINUX"
+  key_name               = "slave-3"
   subnet_id              = aws_subnet.public_subnet.id
   vpc_security_group_ids = [aws_security_group.mysg.id]
   user_data              = file("bash.sh")
