@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: wordpress.c18akoy0wjre.us-east-1.rds.amazonaws.com
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: Secure75!
+    volumes:
+      - wp-data:/var/www/html
+volumes:
+  wp-data:
