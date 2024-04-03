@@ -17,7 +17,7 @@ spec:
         image: wordpress
         env:
         - name: WORDPRESS_DB_HOST
-          value: wordpress.cheelndqlyie.us-east-1.rds.amazonaws.com
+          value: database.cheelndqlyie.us-east-1.rds.amazonaws.com
         - name: WORDPRESS_DB_NAME
           value: wordpress
         - name: WORDPRESS_DB_USER
