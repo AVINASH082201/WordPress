@@ -1,5 +1,5 @@
 #!/bin/bash
-DB_HOST="wordpress.c18akoy0wjre.us-east-1.rds.amazonaws.com"
+DB_HOST="database.cheelndqlyie.us-east-1.rds.amazonaws.com"
 DB_NAME="wordpress"
 DB_USER="admin"
 DB_PASSWORD="Secure75!"
